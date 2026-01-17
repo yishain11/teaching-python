@@ -1,37 +1,35 @@
-class Worker:
-    def __init__(self, hourly_rate) -> None:
-        self.hours = 0
-        self.hourly_rate = hourly_rate
+class SimplerWorker:
+    def __init__(self, name) -> None:
+        self.__name = name
+        self._age = 37
+        pass
 
-    def calc_salary(self):
-        return self.hours * self.hourly_rate
+    def get_name(self):
+        return self.__name
 
-
-w = Worker(20)
-
-# bad - access to internal hours
-# print(w.calc_salary())
-
-# w.hours = 1000
-
-# print(w.calc_salary())
-
-# better - set as private
+    def get_age(self):
+        return self._age
 
 
-class SafeWorker:
-    def __init__(self, hourly_rate) -> None:
-        self.__hours = 0
-        self.__hourly_rate = hourly_rate
+# sw1 = SimplerWorker("yishai")
+# print(sw1.__dict__)
+# print(sw1.get_name())
 
-    def calc_salary(self):
-        return self.__hours * self.__hourly_rate
+# tsw.upper_case_name()
 
 
-w1 = SafeWorker(20)
-print(w1.__dict__)
-print(w1.calc_salary())
+class TechSimplerWorker(SimplerWorker):
+    def __init__(self, name) -> None:
+        super().__init__(name)
 
-w1.__hours = 1000
-print("hours", w1.__hours)
-print(w1.calc_salary())
+    def upper_case_name(self):
+        print(self.__name.upper())
+
+    def minus1_age(self):
+        print(self._age - 1)
+
+
+tsw = TechSimplerWorker("bob")
+print(tsw.__dict__)
+tsw.minus1_age()
+# tsw.upper_case_name()
