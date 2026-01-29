@@ -1,0 +1,2 @@
+date,secret_num,current_num_guesses,_last_guess,last_answer
+1769530755.2381752,7,1,5,low
