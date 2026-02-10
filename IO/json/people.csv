@@ -1,0 +1,14 @@
+name, age, addr, has_children, child1,child2,child3,child4
+"yishai",37,"jlm",True, 
+
+
+{
+    "name":"yishai",
+    "age":47,
+    "addr":"jlm",
+    children: [
+        {
+            "name":"eitan"
+        }
+    ] 
+}
