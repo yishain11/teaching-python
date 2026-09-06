@@ -1,9 +1,4 @@
-def function_factory(phrase):
-    def inner_fn():
-        print(phrase)
+d1 = {"a": 1}
+b = d1.items()
 
-    return inner_fn
-
-
-my_fn = function_factory("hi!")
-my_fn()
+print(b, type(b))

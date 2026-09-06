@@ -34,3 +34,50 @@ c = Car()
 print(c.fuel)  # looks like a field - but this is a method
 c.fuel = 100  # looks like var setting - but this is a method
 print(c.fuel)  # looks like a field - but this is a method
+
+
+# another example
+
+# no getter or setter
+# class Person:
+#     def __init__(self,name) -> None:
+#         self.name = name
+#     def get_name(self):
+#         return self.name
+#     def set_name(self,new_name):
+#         self.name = new_name
+
+
+# getter
+# class Person:
+#     def __init__(self, name) -> None:
+#         self.__name = name
+
+#     @property
+#     def name(self):
+#         return self.__name
+
+
+# p1 = Person("bob")
+
+# print(p1.name) # bob - hidden function!
+
+
+# getter + setter
+class Person:
+    def __init__(self, name) -> None:
+        self.__name = name
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name
+
+
+p1 = Person("bob")
+print(p1.name)  # getter hidden method
+p1.name = "BOB!"  # setter hidden method
+print(p1.name)  # getter hidden method
